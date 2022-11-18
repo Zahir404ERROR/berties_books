@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Delete users for <%=shopName%>
+  </title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <p><a href="./">Home</a></p>
+  <h1>Delete users for <%=shopName%>
+  </h1>
+  <form method="POST" action="/deleted">
+    <!-- Selector for Users  -->
+    <select name="usrname" id="usrname">
+      <% availableUsers.forEach(function(user){ %>
+        <option value="<%= user.username %>">
+          <%= user.username %>
+        </option>
+        <% }) %>
+    </select>
+    <input type="submit" value="Delete" />
+  </form>
+</body>
+
+</html>
